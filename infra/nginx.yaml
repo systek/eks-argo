@@ -6,20 +6,19 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://helm.nginx.com/stable'
-    targetRevision: '0.17.1'  
+    repoURL: 'oci://ghcr.io/nginxinc/charts/nginx-ingress'
+    targetRevision: '1.1.2'
     chart: nginx-ingress
     helm:
-      parameters: 
+      parameters:
         - name: controller.replicaCount
           value: "1"
         - name: controller.service.type
           value: "LoadBalancer"
   destination:
-    server: 'https://kubernetes.default.svc'  
-    namespace: nginx-ingress  
+    server: 'https://kubernetes.default.svc'
+    namespace: nginx-ingress
   syncPolicy:
     automated:
       selfHeal: true
       prune: true
-
