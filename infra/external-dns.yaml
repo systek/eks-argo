@@ -9,6 +9,8 @@ kind: ServiceAccount
 metadata:
     name: external-dns
     namespace: external-dns
+    annotations:
+        eks.amazonaws.com/role-arn: arn:aws:iam::754022411271:role/external-dns-irsa-role
     labels:
         app.kubernetes.io/name: external-dns
 ---
