@@ -50,7 +50,7 @@ kind: ControllerConfig
 metadata:
     name: aws-config-s3
     annotations:
-        eks.amazonaws.com/role-arn: arn:aws:iam::754022411271:role/crossplans3test
+        eks.amazonaws.com/role-arn: arn:aws:iam::754022411271:role/s3-role
 spec:
     podSecurityContext:
         fsGroup: 2000
