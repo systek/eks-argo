@@ -10,22 +10,22 @@ spec:
     forProvider:
         assumeRolePolicy: |
             {
-        "Version": "2012-10-17",
-        "Statement": [
-        {
-            "Effect": "Allow",
-            "Principal": {
-                "Federated": "arn:aws:iam::754022411271:oidc-provider/oidc.eks.eu-west-1.amazonaws.com/id/6042C964265029341FC0F0808E03B472"
-            },
-            "Action": "sts:AssumeRoleWithWebIdentity",
-            "Condition": {
-                "StringLike": {
-                    "oidc.eks.eu-west-1.amazonaws.com/id/6042C964265029341FC0F0808E03B472:sub": "system:serviceaccount:crossplane-system:provider-aws-s3*"
+                "Version": "2012-10-17",
+                "Statement": [
+                    {
+                    "Effect": "Allow",
+                    "Principal": {
+                        "Federated": "arn:aws:iam::754022411271:oidc-provider/oidc.eks.eu-west-1.amazonaws.com/id/6042C964265029341FC0F0808E03B472"
+                    },
+                "Action": "sts:AssumeRoleWithWebIdentity",
+                "Condition": {
+                    "StringLike": {
+                        "oidc.eks.eu-west-1.amazonaws.com/id/6042C964265029341FC0F0808E03B472:sub": "system:serviceaccount:crossplane-system:provider-aws-s3*"
+                    }
                 }
             }
+            ]
         }
-    ]
-}
 ---
 apiVersion: iam.aws.upbound.io/v1beta1
 kind: RolePolicyAttachment
