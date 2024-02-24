@@ -25,6 +25,8 @@ spec:
                 }
             }
             ]}
+    providerConfigRef:
+        name: aws-provider-iam
 ---
 apiVersion: iam.aws.upbound.io/v1beta1
 kind: RolePolicyAttachment
@@ -40,6 +42,8 @@ spec:
         roleSelector:
             matchLabels:
                 testing.upbound.io/example-name: s3-role
+    providerConfigRef:
+        name: aws-provider-iam
 ---
 apiVersion: pkg.crossplane.io/v1alpha1
 kind: ControllerConfig
