@@ -4,8 +4,8 @@ metadata:
     annotations:
         meta.upbound.io/example-id: iam/v1beta1/rolepolicy
     labels:
-        testing.upbound.io/example-name: s3role
-    name: s3Role
+        testing.upbound.io/example-name: s3-role
+    name: s3-role
 spec:
     forProvider:
         assumeRolePolicy: |
@@ -39,7 +39,7 @@ spec:
         policyArn: arn:aws:iam::aws:policy/AmazonS3FullAccess
         roleSelector:
             matchLabels:
-                testing.upbound.io/example-name: s3Role
+                testing.upbound.io/example-name: s3-role
 ---
 apiVersion: pkg.crossplane.io/v1alpha1
 kind: ControllerConfig
