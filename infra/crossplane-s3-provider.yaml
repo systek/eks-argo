@@ -2,6 +2,7 @@ apiVersion: systek.no/v1alpha1
 kind: IRSABinding
 metadata:
     name: s3-provider-role-binding
+    namespace: crossplane-system
 spec:
     roleName: s3-provider-role
     serviceAccount: "system:serviceaccount:crossplane-system:provider-aws-s3*"

@@ -8,6 +8,7 @@ apiVersion: systek.no/v1alpha1
 kind: IRSABinding
 metadata:
     name: external-dns-role-binding
+    namespace: external-dns
 spec:
     roleName: external-dns-role
     serviceAccount: "system:serviceaccount:external-dns:external-dns"
