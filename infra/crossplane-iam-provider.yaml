@@ -14,7 +14,7 @@ metadata:
     name: provider-aws-iam
     namespace: crossplane-system
 spec:
-    package:  xpkg.upbound.io/upbound/provider-aws-iam:v1.1.0
+    package:  xpkg.upbound.io/upbound/provider-aws-iam:v1.1.1
     controllerConfigRef:
         name: aws-config-iam
 ---
