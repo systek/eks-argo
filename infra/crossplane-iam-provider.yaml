@@ -27,4 +27,3 @@ spec:
     controllerConfigRef:
         name: aws-config-iam
 
-
