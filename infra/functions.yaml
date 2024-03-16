@@ -8,6 +8,13 @@ spec:
         name: modify-service-account
 ---
 apiVersion: pkg.crossplane.io/v1beta1
+kind: Function
+metadata:
+    name: function-auto-ready
+spec:
+    package: xpkg.upbound.io/crossplane-contrib/function-auto-ready:v0.2.1
+---
+apiVersion: pkg.crossplane.io/v1beta1
 kind: DeploymentRuntimeConfig
 metadata:
     name: modify-service-account
