@@ -1,7 +1,7 @@
 resources:
     - argocd-repositories.yaml
     #- crossplane.yaml
-    #- crossplane-iam-provider.yaml
-    - external-dns.yaml
+    - crossplane-iam-provider.yaml
+    #- external-dns.yaml
     - external-secrets.yaml
     - nginx-gateway-fabric.yaml
