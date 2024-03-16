@@ -7,7 +7,7 @@ metadata:
 apiVersion: systek.no/v1alpha1
 kind: IRSABinding
 metadata:
-    name: s3-provider-role-binding
+    name: external-dns-role-binding
 spec:
     roleName: external-dns-role
     serviceAccount: "system:serviceaccount:external-dns:external-dns"
