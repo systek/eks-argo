@@ -1,0 +1,41 @@
+apiVersion: pkg.crossplane.io/v1beta1
+kind: Function
+metadata:
+    name: function-systek-iam
+spec:
+    package: 754022411271.dkr.ecr.eu-west-1.amazonaws.com/systek-related-stuff:0.0.2
+    runtimeConfigRef:
+        name: modify-service-account
+---
+apiVersion: pkg.crossplane.io/v1beta1
+kind: DeploymentRuntimeConfig
+metadata:
+    name: modify-service-account
+spec:
+    serviceAccountTemplate:
+        metadata:
+            name: function-systek-iam
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+    namespace: crossplane-system
+    name: configmaps-get-role
+rules:
+    - apiGroups: [""]
+      resources: ["configmaps"]
+      verbs: ["get", "list", "watch"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+    name: configmaps-get-rolebinding
+    namespace: crossplane-system
+subjects:
+    - kind: ServiceAccount
+      name: function-systek-iam
+      namespace: crossplane-system
+roleRef:
+    kind: Role
+    name: configmaps-get-role
+    apiGroup: rbac.authorization.k8s.io

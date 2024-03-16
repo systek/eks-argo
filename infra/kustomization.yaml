@@ -5,3 +5,4 @@ resources:
     #- external-dns.yaml
     - external-secrets.yaml
     - nginx-gateway-fabric.yaml
+    - functions.yaml
