@@ -1,47 +1,11 @@
-apiVersion: iam.aws.upbound.io/v1beta1
-kind: Role
+apiVersion: systek.no/v1alpha1
+kind: IRSABinding
 metadata:
-    annotations:
-        meta.upbound.io/example-id: iam/v1beta1/rolepolicy
-    labels:
-        testing.upbound.io/example-name: s3-role
-    name: s3-role
+    name: s3-provider-role-binding
 spec:
-    forProvider:
-        assumeRolePolicy: |
-            {
-                "Version": "2012-10-17",
-                "Statement": [
-                    {
-                    "Effect": "Allow",
-                    "Principal": {
-                        "Federated": "arn:aws:iam::754022411271:oidc-provider/oidc.eks.eu-west-1.amazonaws.com/id/6042C964265029341FC0F0808E03B472"
-                    },
-                "Action": "sts:AssumeRoleWithWebIdentity",
-                "Condition": {
-                    "StringLike": {
-                        "oidc.eks.eu-west-1.amazonaws.com/id/6042C964265029341FC0F0808E03B472:sub": "system:serviceaccount:crossplane-system:provider-aws-s3*"
-                    }
-                }
-            }
-            ]}
-    providerConfigRef:
-        name: aws-provider-iam
----
-apiVersion: iam.aws.upbound.io/v1beta1
-kind: RolePolicyAttachment
-metadata:
-    annotations:
-        meta.upbound.io/example-id: iam/v1beta1/role
-    labels:
-        testing.upbound.io/example-name: role
-    name: s3-policy-attachment
-spec:
-    forProvider:
-        policyArn: arn:aws:iam::aws:policy/AmazonS3FullAccess
-        roleSelector:
-            matchLabels:
-                testing.upbound.io/example-name: s3-role
+    roleName: s3-provider-role
+    serviceAccount: "system:serviceaccount:crossplane-system:provider-aws-s3*"
+    rolePolicyArn: "arn:aws:iam::aws:policy/AmazonS3FullAccess"
     providerConfigRef:
         name: aws-provider-iam
 ---
