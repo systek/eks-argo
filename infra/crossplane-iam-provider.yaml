@@ -8,16 +8,8 @@ spec:
     podSecurityContext:
         fsGroup: 2000
 ---
-apiVersion: pkg.crossplane.io/v1
-kind: Provider
-metadata:
-    name: provider-aws-iam
-    namespace: crossplane-system
-spec:
-    package:  xpkg.upbound.io/upbound/provider-aws-iam:v1.1.1
-    controllerConfigRef:
-        name: aws-config-iam
----
+
+
 apiVersion: aws.upbound.io/v1beta1
 kind: ProviderConfig
 metadata:
@@ -25,3 +17,14 @@ metadata:
 spec:
     credentials:
         source: IRSA
+---
+apiVersion: pkg.crossplane.io/v1
+kind: Provider
+metadata:
+    name: provider-aws-iam
+spec:
+    package: xpkg.upbound.io/upbound/provider-aws-iam:v1.2.0
+    controllerConfigRef:
+        name: aws-config-iam
+
+
