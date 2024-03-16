@@ -3,7 +3,7 @@ kind: Function
 metadata:
     name: function-systek-iam
 spec:
-    package: 754022411271.dkr.ecr.eu-west-1.amazonaws.com/systek-related-stuff:0.0.7
+    package: 754022411271.dkr.ecr.eu-west-1.amazonaws.com/systek-related-stuff:0.0.8
     runtimeConfigRef:
         name: modify-service-account
 ---
