@@ -1,60 +1,6 @@
 # comment out sa if it was previously created
-apiVersion: v1
-kind: Namespace
-metadata:
-    name: external-dns
----
-apiVersion: systek.no/v1alpha1
-kind: IRSABinding
-metadata:
-    name: external-dns-role-binding
-    namespace: external-dns
-spec:
-    roleName: external-dns-role
-    serviceAccount: "system:serviceaccount:external-dns:external-dns"
-    rolePolicyArn: "arn:aws:iam::754022411271:policy/AllowExternalDNSUpdates"
-    providerConfigRef:
-        name: aws-provider-iam
----
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-    name: external-dns
-    namespace: external-dns
-    annotations:
-        eks.amazonaws.com/role-arn: arn:aws:iam::754022411271:role/external-dns-role
-    labels:
-        app.kubernetes.io/name: external-dns
----
-apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRole
-metadata:
-    name: external-dns
-    labels:
-        app.kubernetes.io/name: external-dns
-rules:
-    - apiGroups: [""]
-      resources: ["services","endpoints","pods","nodes"]
-      verbs: ["get","watch","list"]
-    - apiGroups: ["extensions","networking.k8s.io"]
-      resources: ["ingresses"]
-      verbs: ["get","watch","list"]
----
-apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRoleBinding
-metadata:
-    name: external-dns-viewer
-    labels:
-        app.kubernetes.io/name: external-dns
-roleRef:
-    apiGroup: rbac.authorization.k8s.io
-    kind: ClusterRole
-    name: external-dns
-subjects:
-    - kind: ServiceAccount
-      name: external-dns
-      namespace: external-dns
----
+
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:

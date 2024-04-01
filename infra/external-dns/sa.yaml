@@ -1,0 +1,21 @@
+apiVersion: systek.no/v1alpha1
+kind: IRSABinding
+metadata:
+    name: external-dns-role-binding
+    namespace: external-dns
+spec:
+    roleName: external-dns-role
+    serviceAccount: "system:serviceaccount:external-dns:external-dns"
+    rolePolicyArn: "arn:aws:iam::754022411271:policy/AllowExternalDNSUpdates"
+    providerConfigRef:
+        name: aws-provider-iam
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+    name: external-dns
+    namespace: external-dns
+    annotations:
+        eks.amazonaws.com/role-arn: arn:aws:iam::754022411271:role/external-dns-role
+    labels:
+        app.kubernetes.io/name: external-dns
