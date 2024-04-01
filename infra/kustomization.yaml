@@ -1,11 +1,11 @@
 resources:
     - nginx-gateway-fabric/argocd-repositories.yaml
     - nginx-gateway-fabric/nginx-gateway-fabric.yaml
-    - crossplane.yaml
-    - crossplane-iam-provider.yaml
+    - crossplane/crossplane.yaml
+    - crossplane/crossplane-iam-provider.yaml
+    - crossplane/irsa-composition.yaml
+    - crossplane/crossplane-s3-provider.yaml
     - external-secrets.yaml
-    - irsa-composition.yaml
-    - crossplane-s3-provider.yaml
     - external-dns/namespace.yaml
     - external-dns/sa.yaml
     - external-dns/roles.yaml
