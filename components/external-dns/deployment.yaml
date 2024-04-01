@@ -21,8 +21,11 @@ spec:
                 - name: external-dns
                   image: registry.k8s.io/external-dns/external-dns:v0.14.0
                   args:
-                      - --source=service
-                      - --source=ingress
+                      - --source=gateway-httproute
+                      - --source=gateway-grpcroute
+                      - --source=gateway-tlsroute
+                      - --source=gateway-tcproute
+                      - --source=gateway-udproute
                       - --domain-filter=systekeks.no # will make ExternalDNS see only the hosted zones matching provided domain, omit to process all available hosted zones
                       - --provider=aws
                       - --policy=upsert-only # would prevent ExternalDNS from deleting any records, omit to enable full synchronization
