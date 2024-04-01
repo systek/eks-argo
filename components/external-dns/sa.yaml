@@ -45,7 +45,7 @@ metadata:
 spec:
     roleName: external-dns-role
     serviceAccount: "system:serviceaccount:external-dns:external-dns"
-    rolePolicyArn: "arn:aws:iam::754022411271:policy/AllowExternalDNSUpdates"
+    rolePolicyArn: "arn:aws:iam::754022411271:policy/eks-demo-route53-policy"
     providerConfigRef:
         name: aws-provider-iam
 ---
