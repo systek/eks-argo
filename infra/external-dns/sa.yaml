@@ -1,6 +1,8 @@
 apiVersion: systek.no/v1alpha1
 kind: IRSABinding
 metadata:
+    annotations:
+        argocd.argoproj.io/sync-wave: "3"
     name: external-dns-role-binding
     namespace: external-dns
 spec:
@@ -16,6 +18,7 @@ metadata:
     name: external-dns
     namespace: external-dns
     annotations:
+        argocd.argoproj.io/sync-wave: "3"
         eks.amazonaws.com/role-arn: arn:aws:iam::754022411271:role/external-dns-role
     labels:
         app.kubernetes.io/name: external-dns

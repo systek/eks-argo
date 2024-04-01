@@ -1,6 +1,8 @@
 apiVersion: pkg.crossplane.io/v1beta1
 kind: Function
 metadata:
+    annotations:
+        argocd.argoproj.io/sync-wave: "2"
     name: function-systek-iam
 spec:
     package: 754022411271.dkr.ecr.eu-west-1.amazonaws.com/systek-related-stuff:0.0.8
@@ -10,6 +12,8 @@ spec:
 apiVersion: pkg.crossplane.io/v1beta1
 kind: Function
 metadata:
+    annotations:
+        argocd.argoproj.io/sync-wave: "2"
     name: function-auto-ready
 spec:
     package: xpkg.upbound.io/crossplane-contrib/function-auto-ready:v0.2.1
@@ -17,6 +21,8 @@ spec:
 apiVersion: pkg.crossplane.io/v1beta1
 kind: DeploymentRuntimeConfig
 metadata:
+    annotations:
+        argocd.argoproj.io/sync-wave: "2"
     name: modify-service-account
 spec:
     serviceAccountTemplate:
@@ -26,6 +32,8 @@ spec:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
+    annotations:
+        argocd.argoproj.io/sync-wave: "2"
     namespace: crossplane-system
     name: configmaps-get-role
 rules:
@@ -36,6 +44,8 @@ rules:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
+    annotations:
+        argocd.argoproj.io/sync-wave: "2"
     name: configmaps-get-rolebinding
     namespace: crossplane-system
 subjects:
@@ -50,6 +60,8 @@ roleRef:
 apiVersion: apiextensions.crossplane.io/v1
 kind: CompositeResourceDefinition
 metadata:
+    annotations:
+        argocd.argoproj.io/sync-wave: "2"
     name: compositeirsabindings.systek.no
 spec:
     group: systek.no
@@ -93,6 +105,8 @@ spec:
 apiVersion: apiextensions.crossplane.io/v1
 kind: Composition
 metadata:
+    annotations:
+        argocd.argoproj.io/sync-wave: "2"
     name: function-systek-iam
 spec:
     compositeTypeRef:

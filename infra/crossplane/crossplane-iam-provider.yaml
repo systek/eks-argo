@@ -3,6 +3,7 @@ kind: ControllerConfig
 metadata:
     name: aws-config-iam
     annotations:
+        argocd.argoproj.io/sync-wave: "2"
         eks.amazonaws.com/role-arn: arn:aws:iam::754022411271:role/iam_crossplane_role
 spec:
     podSecurityContext:
@@ -13,6 +14,8 @@ spec:
 apiVersion: aws.upbound.io/v1beta1
 kind: ProviderConfig
 metadata:
+    annotations:
+        argocd.argoproj.io/sync-wave: "2"
     name: aws-provider-iam
 spec:
     credentials:
@@ -21,6 +24,8 @@ spec:
 apiVersion: pkg.crossplane.io/v1
 kind: Provider
 metadata:
+    annotations:
+        argocd.argoproj.io/sync-wave: "2"
     name: provider-aws-iam
 spec:
     package: xpkg.upbound.io/upbound/provider-aws-iam:v1.2.0
