@@ -4,3 +4,4 @@ resources:
     - crds.yaml
     - argocd-repositories.yaml
     - nginx-gateway-fabric.yaml
+    - gateway.yaml
