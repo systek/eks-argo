@@ -7,4 +7,7 @@ resources:
     - nginx-gateway-fabric.yaml
     - irsa-composition.yaml
     - crossplane-s3-provider.yaml
-    - external-dns/kustomization.yaml
+    - external-dns/namespace.yaml
+    - external-dns/sa.yaml
+    - external-dns/roles.yaml
+    - external-dns/deployment.yaml
