@@ -5,12 +5,9 @@ metadata:
     labels:
         app.kubernetes.io/name: external-dns
 rules:
-    - apiGroups: [""]
-      resources: ["services","endpoints","pods","nodes"]
-      verbs: ["get","watch","list"]
-    - apiGroups: ["extensions","networking.k8s.io"]
-      resources: ["ingresses"]
-      verbs: ["get","watch","list"]
+    - apiGroups: [ "" ]
+      resources: [ "namespaces" ]
+      verbs: [ "get","watch","list" ]
     - apiGroups: [ "gateway.networking.k8s.io" ]
       resources: [ "gateways","httproutes","grpcroutes","tlsroutes","tcproutes","udproutes" ]
       verbs: [ "get","watch","list" ]
