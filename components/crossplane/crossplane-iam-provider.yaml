@@ -13,6 +13,7 @@ apiVersion: aws.upbound.io/v1beta1
 kind: ProviderConfig
 metadata:
     annotations:
+        argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
         argocd.argoproj.io/sync-wave: "2"
     name: aws-provider-iam
 spec:
@@ -23,6 +24,7 @@ apiVersion: pkg.crossplane.io/v1
 kind: Provider
 metadata:
     annotations:
+        argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
         argocd.argoproj.io/sync-wave: "2"
     name: provider-aws-iam
 spec:

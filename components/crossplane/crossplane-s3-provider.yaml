@@ -2,6 +2,7 @@ apiVersion: systek.no/v1alpha1
 kind: IRSABinding
 metadata:
     annotations:
+        argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
         argocd.argoproj.io/sync-wave: "4"
     name: s3-provider-role-binding
     namespace: crossplane-system
@@ -17,6 +18,7 @@ kind: ControllerConfig
 metadata:
     name: aws-config-s3
     annotations:
+        argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
         eks.amazonaws.com/role-arn: arn:aws:iam::754022411271:role/s3-provider-role
         argocd.argoproj.io/sync-wave: "4"
 spec:
@@ -27,6 +29,7 @@ apiVersion: pkg.crossplane.io/v1
 kind: Provider
 metadata:
     annotations:
+        argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
         argocd.argoproj.io/sync-wave: "4"
     name: provider-aws-s3
     namespace: crossplane-system
@@ -40,6 +43,7 @@ kind: ProviderConfig
 metadata:
     annotations:
         argocd.argoproj.io/sync-wave: "4"
+        argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
     name: aws-provider-s3
 spec:
     credentials:
