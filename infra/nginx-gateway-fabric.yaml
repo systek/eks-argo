@@ -3,7 +3,7 @@ kind: Application
 metadata:
     annotations:
         argocd.argoproj.io/sync-wave: "1"
-    name: nginx-gateway-fabric
+    name: nginx-gateway-fabric-app
     namespace: argocd
 spec:
     project: default

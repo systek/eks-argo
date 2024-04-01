@@ -1,14 +1,7 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-    - ../components/crossplane/crossplane.yaml
-    - ../components/crossplane/crossplane-iam-provider.yaml
-    - ../components/crossplane/irsa-composition.yaml
-    - ../components/crossplane/crossplane-s3-provider.yaml
-    - nginx-gateway-fabric/argocd-repositories.yaml
-    - nginx-gateway-fabric/nginx-gateway-fabric.yaml
-    #- external-secrets.yaml
-    - external-dns/namespace.yaml
-    - external-dns/sa.yaml
-    - external-dns/roles.yaml
-    - external-dns/deployment.yaml
+    - crossplane.yaml
+    - crossplane-iam-provider.yaml
+    - crossplane-s3-provider.yaml
+    - irsa-composition.yaml

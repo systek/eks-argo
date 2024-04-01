@@ -3,7 +3,7 @@ kind: Application
 metadata:
     annotations:
         argocd.argoproj.io/sync-wave: "1"
-    name: crossplane
+    name: crossplane-app
     namespace: argocd
 spec:
     project: default
