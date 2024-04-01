@@ -1,3 +1,40 @@
+apiVersion: iam.aws.upbound.io/v1beta1
+kind: Policy
+metadata:
+    annotations:
+        argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+    name: eks-demo-route53-policy
+spec:
+    forProvider:
+        policy: |
+            {
+                "Version": "2012-10-17",
+                "Statement": [
+                {
+                    "Effect": "Allow",
+                    "Action": [
+                        "route53:ChangeResourceRecordSets"
+                    ],
+                    "Resource": [
+                        "arn:aws:route53:::hostedzone/*"
+                    ]
+                },
+                {
+                    "Effect": "Allow",
+                    "Action": [
+                        "route53:ListHostedZones",
+                        "route53:ListResourceRecordSets",
+                        "route53:ListTagsForResource"
+                    ],
+                    "Resource": [
+                        "*"
+                    ]
+                }
+            ]
+            }
+    providerConfigRef:
+        name: aws-provider-iam
+---
 apiVersion: systek.no/v1alpha1
 kind: IRSABinding
 metadata:
