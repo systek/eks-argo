@@ -2,7 +2,7 @@ apiVersion: systek.no/v1alpha1
 kind: IRSABinding
 metadata:
     annotations:
-        argocd.argoproj.io/sync-wave: "2"
+        argocd.argoproj.io/sync-wave: "3"
     name: s3-provider-role-binding
     namespace: crossplane-system
 spec:
@@ -18,7 +18,7 @@ metadata:
     name: aws-config-s3
     annotations:
         eks.amazonaws.com/role-arn: arn:aws:iam::754022411271:role/s3-provider-role
-        argocd.argoproj.io/sync-wave: "2"
+        argocd.argoproj.io/sync-wave: "3"
 spec:
     podSecurityContext:
         fsGroup: 2000
@@ -27,7 +27,7 @@ apiVersion: pkg.crossplane.io/v1
 kind: Provider
 metadata:
     annotations:
-        argocd.argoproj.io/sync-wave: "2"
+        argocd.argoproj.io/sync-wave: "3"
     name: provider-aws-s3
     namespace: crossplane-system
 spec:
@@ -39,7 +39,7 @@ apiVersion: aws.upbound.io/v1beta1
 kind: ProviderConfig
 metadata:
     annotations:
-        argocd.argoproj.io/sync-wave: "2"
+        argocd.argoproj.io/sync-wave: "3"
     name: aws-provider-s3
 spec:
     credentials:
