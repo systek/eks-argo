@@ -4,8 +4,4 @@ resources:
     - crossplane.yaml
     - nginx-gateway-fabric/argocd-repositories.yaml
     - nginx-gateway-fabric/nginx-gateway-fabric.yaml
-    #- external-secrets.yaml
-    - external-dns/namespace.yaml
-    - external-dns/sa.yaml
-    - external-dns/roles.yaml
-    - external-dns/deployment.yaml
+    - external-dns.yaml
