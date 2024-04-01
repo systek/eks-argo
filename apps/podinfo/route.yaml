@@ -8,6 +8,7 @@ metadata:
 spec:
     parentRefs:
         - name: shared
+          namespace: nginx-gateway-fabric
     hostnames:
         - "podinfo.systekeks.no"
     rules:
