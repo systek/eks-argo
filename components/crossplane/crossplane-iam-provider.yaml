@@ -3,6 +3,7 @@ kind: ControllerConfig
 metadata:
     name: aws-config-iam
     annotations:
+        argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
         argocd.argoproj.io/sync-wave: "2"
         eks.amazonaws.com/role-arn: arn:aws:iam::754022411271:role/iam_crossplane_role
 spec:
