@@ -5,3 +5,4 @@ resources:
     - nginx-gateway-fabric.yaml
     - external-dns.yaml
     - external-secrets.yaml
+    - cert-manager.yaml
