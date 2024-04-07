@@ -15,18 +15,6 @@ spec:
           allowedRoutes:
               namespaces:
                   from: "All"
-        - name: podinfo
-          hostname: "podinfo.systekeks.no"
-          port: 443
-          protocol: HTTPS
-          allowedRoutes:
-              namespaces:
-                  from: "All"
-          tls:
-            mode: Terminate
-            certificateRefs:
-             - kind: Secret
-               name: systekeks-secret
         -   name: https
             hostname: "*.systekeks.no"
             port: 443
