@@ -16,7 +16,7 @@ spec:
               namespaces:
                   from: "All"
         - name: https
-          hostname: "*.systekeks.no"
+          hostname: "podinfo.systekeks.no"
           port: 443
           protocol: HTTPS
           allowedRoutes:
@@ -26,4 +26,16 @@ spec:
             mode: Terminate
             certificateRefs:
              - kind: Secret
-               name: wildcard-systekeks-secret
+               name: systekeks-secret
+        -   name: https
+            hostname: "*.systekeks.no"
+            port: 443
+            protocol: HTTPS
+            allowedRoutes:
+                namespaces:
+                    from: "All"
+            tls:
+                mode: Terminate
+                certificateRefs:
+                    -   kind: Secret
+                        name: systekeks-secret
