@@ -19,6 +19,9 @@ spec:
           hostname: "*.systekeks.no"
           port: 443
           protocol: HTTPS
+          allowedRoutes:
+              namespaces:
+                  from: "All"
           tls:
             mode: Terminate
             certificateRefs:
