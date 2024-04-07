@@ -11,9 +11,8 @@ spec:
             name: issuer-account-key
         # Add a single challenge solver, HTTP01 using NGINX Gateway Fabric
         solvers:
-            - http01:
-                  gatewayHTTPRoute:
-                      parentRefs:
-                          - name: shared
-                            namespace: nginx-gateway-fabric
-                            kind: Gateway
+            - dns01:
+                  route53:
+                      region: eu-west-1
+                      hostedZoneID: Z00295122RQ3Y03IXRDR1
+                      role: arn:aws:iam::754022411271:role/cert-manager-dns-role

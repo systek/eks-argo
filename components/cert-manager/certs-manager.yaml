@@ -14,6 +14,9 @@ spec:
     helm:
         values: |
             installCRDs: true
+            serviceAccount:
+                annotations:
+                    annotations: { "eks.amazonaws.com/role-arn": "arn:aws:iam::754022411271:role/cert-manager-dns-role" }
             config:
                 apiVersion: controller.config.cert-manager.io/v1alpha1
                 kind: ControllerConfiguration
