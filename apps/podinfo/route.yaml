@@ -11,7 +11,7 @@ spec:
           sectionName: https
           namespace: nginx-gateway-fabric
     hostnames:
-        - "podinfo2.systekeks.no"
+        - "podinfo.systekeks.no"
     rules:
         - matches:
               - path:
