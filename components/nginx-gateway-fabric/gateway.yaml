@@ -3,6 +3,7 @@ kind: Gateway
 metadata:
     annotations:
         argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+        cert-manager.io/cluster-issuer: letsencrypt-prod
     name: shared
     namespace: nginx-gateway-fabric
 spec:
@@ -14,3 +15,12 @@ spec:
           allowedRoutes:
               namespaces:
                   from: "All"
+        - name: https
+          hostname: "*.systekeks.no"
+          port: 443
+          protocol: HTTPS
+          tls:
+            mode: Terminate
+            certificateRefs:
+             - kind: Secret
+               name: systekeks-secret
