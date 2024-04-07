@@ -15,4 +15,3 @@ spec:
                   route53:
                       region: eu-west-1
                       hostedZoneID: Z00295122RQ3Y03IXRDR1
-                      role: arn:aws:iam::754022411271:role/cert-manager-dns-role
