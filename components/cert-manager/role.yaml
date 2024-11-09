@@ -34,7 +34,7 @@ metadata:
     annotations:
         argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
     name: cert-manager-dns-role-binding
-    namespace: external-secrets
+    namespace: cert-manager
 spec:
     roleName: cert-manager-dns-role
     serviceAccount: "system:serviceaccount:cert-manager:cert-manager"

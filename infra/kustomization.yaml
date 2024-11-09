@@ -4,6 +4,6 @@ resources:
     - crossplane.yaml
     - nginx-gateway-fabric.yaml
     - external-dns.yaml
- #   - external-secrets.yaml
+    - external-secrets.yaml
     - cert-manager.yaml
     - spinkube.yaml
