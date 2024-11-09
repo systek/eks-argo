@@ -5,3 +5,5 @@ resources:
     - spin-operator-crd.yaml
     - spin-operator-runtime-class.yaml
     - spin-operator-shim-executor.yaml
+    - spin-operator.yaml
+    - argocd-repositories.yaml
