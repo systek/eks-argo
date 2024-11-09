@@ -7,9 +7,9 @@ spec:
   source:
     repoURL: http://kwasm.sh/kwasm-operator/
     chart: kwasm-operator
-    targetRevision: 0.16.0  # Specify the desired version
+    targetRevision: 0.2.3
   destination:
-    server: https://kubernetes.default.svc  # In-cluster Kubernetes API server
+    server: https://kubernetes.default.svc
     namespace: kwasm
   syncPolicy:
     automated:
