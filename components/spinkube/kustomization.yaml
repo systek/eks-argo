@@ -3,3 +3,5 @@ kind: Kustomization
 resources:
     - kwasm.yaml
     - spin-operator-crd.yaml
+    - spin-operator-runtime-class.yaml
+    - spin-operator-shim-executor.yaml
