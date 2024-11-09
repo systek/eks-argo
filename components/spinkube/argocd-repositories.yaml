@@ -10,4 +10,4 @@ stringData:
   name: "spin-operator"
   project: "default"
   type: "helm"
-  url: "ghcr.io/nginxinc/charts"
+  url: "oci://ghcr.io/spinkube/charts"
