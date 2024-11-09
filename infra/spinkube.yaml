@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+    annotations:
+        argocd.argoproj.io/sync-wave: "1"
+    name: spinekube-app
+    namespace: argocd
+spec:
+    project: default
+    source:
+        repoURL: 'https://github.com/systek/eks-argo.git'
+        path: components/spinkube
+        targetRevision: HEAD
+        kustomize: {}
+    destination:
+        server: 'https://kubernetes.default.svc'
+        namespace: argocd
+    syncPolicy:
+        automated:
+            selfHeal: true
+            prune: false
