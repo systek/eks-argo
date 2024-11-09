@@ -6,7 +6,7 @@ metadata:
         argocd.argoproj.io/sync-wave: "2"
     name: function-systek-iam
 spec:
-    package: 754022411271.dkr.ecr.eu-west-1.amazonaws.com/systek-related-stuff:0.0.8
+    package: public.ecr.aws/t4t0k0p0/systek-eks-stuff:0.0.8
     runtimeConfigRef:
         name: modify-service-account
 ---
