@@ -7,4 +7,3 @@ resources:
  #   - external-secrets.yaml
     - cert-manager.yaml
     - spinkube.yaml
-    - ../apps/podinfo.yaml
